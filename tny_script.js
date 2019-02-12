@@ -23,6 +23,7 @@ function runClock() {
     var newYear = new Date("January 1, 2018");
     var nextYear = currentDay.getFullYear() + 1;
     newYear.setFullYear(nextYear);
+    // calculate the days,hrs,mins,and secs left 
     var daysLeft = (newYear - currentDay) / (1000 * 60 * 60 * 24);
     var hrsLeft = (daysLeft - Math.floor(daysLeft)) * 24;
     var minsLeft = (hrsLeft - Math.floor(hrsLeft)) * 60;
@@ -36,5 +37,7 @@ function runClock() {
     document.getElementById("secs").textContent = Math.floor(secsLeft);
 
 }
+//call function
 runClock();
+// sets the interval for the function runclock and sets the time of the interval
 setInterval("runClock()", 1000);
